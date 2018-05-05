@@ -5,12 +5,12 @@ import { addReminder } from '../actions'
 class App extends Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
       text: ''
     }
   }
-  
+
   addReminder() {
     this.props.addReminder(this.state.text)
   }
@@ -36,24 +36,23 @@ class App extends Component {
       <div className="mdui-container">
         <div className="mdui-col-sm-6 mdui-col-xs-12">
           <div className="mdui-typo">
-            <h1>h1 标题 heading</h1>
+            <h1>Todo List Demo</h1>
           </div>
           <div className="mdui-textfield">
-            <input 
-              className="mdui-textfield-input" 
-              type="text" 
-              placeholder="User Name" 
+            <input
+              className="mdui-textfield-input"
+              type="text"
+              placeholder="User Name"
               defaultValue={ this.state.text }
               onChange={ (event) => this.setState({text: event.target.value}) }/>
           </div>
-          <button 
+          <button
             className="mdui-btn mdui-btn-raised mdui-ripple mdui-color-deep-purple"
             onClick={ () => this.addReminder() }>
             Button
           </button>
           { this.rendReminders() }
         </div>
-        
       </div>
     );
   }
