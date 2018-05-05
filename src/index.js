@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import registerServiceWorker from './registerServiceWorker';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux'
@@ -20,7 +22,11 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={ store }>
-    <App />
+    <React.Fragment>
+      <Header />
+        <App />
+      <Footer />
+    </React.Fragment>
   </Provider>, 
   document.getElementById('root')
 );
